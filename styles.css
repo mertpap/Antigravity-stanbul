@@ -175,7 +175,110 @@ p {
     width: 100%;
 }
 
+/* ─── Image Components ─────────────────────────────── */
+
+/* Hero Bg – Tower */
+.hero-image-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.22;
+    filter: grayscale(100%) contrast(1.1);
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.85) 100%);
+}
+.void-section { position: relative; }
+.void-content { position: relative; z-index: 1; }
+
+/* Full-bleed image band – Bridge */
+.fullbleed-image-band {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+.fullbleed-image-band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) contrast(1.15) brightness(0.75);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale(1.03);
+}
+.fullbleed-image-band:hover img { transform: scale(1.0); }
+.band-caption {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: rgba(255,255,255,0.4);
+}
+
+/* Section image strip – Stairs */
+.section-image {
+    margin-top: 10vh;
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+}
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) brightness(0.65);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.8s;
+}
+.section-image:hover img {
+    transform: scale(1.02);
+    filter: grayscale(80%) brightness(0.75);
+}
+
+/* Case visual – Metro / Concert */
+.case-visual {
+    margin-top: 2rem;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+.case-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1) brightness(0.7);
+    transition: filter 0.6s ease, transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.case:hover .case-visual img {
+    filter: grayscale(60%) contrast(1.1) brightness(0.85);
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .fullbleed-image-band { height: 45vw; min-height: 220px; }
+    .band-caption { font-size: 0.6rem; right: 1.4rem; bottom: 1rem; }
+    .section-image { height: 42vw; min-height: 200px; margin-top: 6vh; }
+    .case-visual { height: 180px; }
+}
+@media (max-width: 420px) {
+    .fullbleed-image-band { height: 55vw; min-height: 180px; }
+    .case-visual { height: 140px; }
+}
+
 /* Void Section */
+
 .void-section {
     padding-top: 25vh;
 }
