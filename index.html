@@ -12,180 +12,185 @@
 </head>
 <body>
 
-  <!-- Cursor -->
+  <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- Nav -->
+  <!-- ─── NAV ─────────────────────────────────────── -->
   <nav class="nav">
     <span class="nav-logo">ANTIGRAVITY</span>
     <ul class="nav-links">
-      <li><a href="#void">Void</a></li>
+      <li><a href="#hero">Void</a></li>
       <li><a href="#core">Core</a></li>
       <li><a href="#cases">Cases</a></li>
     </ul>
   </nav>
 
-  <!-- ══════════ HERO / THE VOID ══════════ -->
-  <section id="void" class="hero">
-    <div class="hero-bg">
-      <img src="assets/tower.jpg" alt="İstanbul gece" />
-    </div>
+  <!-- ─── SCROLL CONTAINER ─────────────────────────── -->
+  <div class="scroll-container" id="scrollContainer">
 
-    <div class="hero-body">
-      <h1 class="display-xl">ANTI<br>GRAVITY</h1>
-      <p class="hero-city">ISTANBUL</p>
-      <p class="hero-copy">
-        Sadelik, ulaşılabilecek en yüksek karmaşıklıktır.<br>
-        Herkes gürültü yapıyor. Biz ise sessizliği tasarlıyoruz.<br><br>
-        Antigravity Istanbul, markaların üzerindeki o hantal ve işe yaramaz<br>
-        yükleri kaldırıp atan bağımsız bir fikir laboratuvarıdır.<br><br>
-        İnsanlara ne düşüneceklerini söylemiyoruz.<br>
-        Onlara ne hissedeceklerini veriyoruz.<br><br>
-        <em>Ağırlıklardan arın. Sadece gerçeğine yüksel.</em>
-      </p>
-    </div>
-
-    <!-- Marquee -->
-    <div class="marquee-track">
-      <div class="marquee-inner">
-        <span>Gürültüyü kapat.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>Ağırlığı reddet.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>İnsana dokun.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>Sadece en saf halinle kal.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>Gürültüyü kapat.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>Ağırlığı reddet.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>İnsana dokun.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
-        <span>Sadece en saf halinle kal.&nbsp;&nbsp;—&nbsp;&nbsp;</span>
+    <!-- ══ 01 · HERO ══════════════════════════════ -->
+    <section id="hero" class="panel panel-hero">
+      <div class="panel-bg" id="heroBg">
+        <img src="assets/tower.jpg" alt="İstanbul Kulesi gece" />
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════ FULL-BLEED IMAGE — Bridge ══════════ -->
-  <figure class="fullbleed">
-    <img src="assets/bridge.jpg" alt="Köprü altı" loading="lazy" />
-    <figcaption>ISTANBUL ↑ ZERO GRAVITY</figcaption>
-  </figure>
-
-  <!-- ══════════ THE CORE ══════════ -->
-  <section id="core" class="section-core">
-    <div class="core-title-col">
-      <h2 class="display-lg">THE<br>CORE</h2>
-    </div>
-    <div class="core-text-col">
-      <p class="body-lead">
-        Dünyayı değiştirebileceğine inanan markalar, güvenli sularda yüzmez.
-        Biz kurallara uymak için değil, kendi evrenimizi yaratmak için buradayız.
-        Uluslararası vizyonu, sokağın ritmiyle birleştiriyoruz.
-      </p>
-      <p class="body-copy">
-        Bir markanın <em>Ikigai</em>'sini — gerçek varoluş amacını — buluyor ve onu <em>Kaizen</em> felsefesiyle,
-        her detayında kusursuzluğu arayarak yeniden inşa ediyoruz. Bizim için tasarım sadece bir şeyin
-        nasıl göründüğü değildir; nasıl hissettirdiğidir.
-      </p>
-    </div>
-  </section>
-
-  <!-- ══════════ THE ARSENAL ══════════ -->
-  <section id="arsenal" class="section-arsenal">
-    <h2 class="display-md arsenal-title">THE<br>ARSENAL</h2>
-
-    <div class="disciplines">
-
-      <div class="discipline js-reveal">
-        <span class="discipline-num">01</span>
-        <h3 class="discipline-name">Kimlik<br>&amp; Mimari</h3>
-        <p class="body-copy">
-          Sadece bir logo çizmiyoruz. Markanızın ruhunu ete kemiğe büründürüyoruz.
-          Zamansız, net ve bakanın bir daha asla unutamayacağı kadar yalın bir karakter mimarisi.
+      <div class="panel-content hero-content">
+        <h1 class="display-hero" data-split>
+          <span>ANTI</span><span>GRAVITY</span>
+        </h1>
+        <p class="hero-sub">ISTANBUL</p>
+        <p class="hero-copy">
+          Sadelik, ulaşılabilecek en yüksek karmaşıklıktır.<br>
+          Herkes gürültü yapıyor. <em>Biz ise sessizliği tasarlıyoruz.</em><br><br>
+          Antigravity Istanbul, markaların üzerindeki o hantal ve işe yaramaz<br>
+          yükleri kaldırıp atan bağımsız bir fikir laboratuvarıdır.<br><br>
+          İnsanlara ne düşüneceklerini söylemiyoruz.<br>
+          <em>Onlara ne hissedeceklerini veriyoruz.</em><br><br>
+          Ağırlıklardan arın. Sadece gerçeğine yüksel.
         </p>
       </div>
-
-      <div class="discipline js-reveal">
-        <span class="discipline-num">02</span>
-        <h3 class="discipline-name">Ses<br>&amp; Fısıltı</h3>
-        <p class="body-copy">
-          Pazarın o sağır edici gürültüsü içinde bağırmıyoruz. Fısıldıyoruz.
-          Çünkü doğru frekansta bir fısıltı, en büyük gürültüleri bile bastırır.
-          Pazarlama jargonu yok. Saf ve dürüst bir iletişim var.
-        </p>
+      <!-- Marquee ticker -->
+      <div class="marquee">
+        <div class="marquee-inner">
+          <span>Gürültüyü kapat.&ensp;—&ensp;</span>
+          <span>Ağırlığı reddet.&ensp;—&ensp;</span>
+          <span>İnsana dokun.&ensp;—&ensp;</span>
+          <span>Sadece en saf halinle kal.&ensp;—&ensp;</span>
+          <span>Gürültüyü kapat.&ensp;—&ensp;</span>
+          <span>Ağırlığı reddet.&ensp;—&ensp;</span>
+          <span>İnsana dokun.&ensp;—&ensp;</span>
+          <span>Sadece en saf halinle kal.&ensp;—&ensp;</span>
+        </div>
       </div>
+      <div class="scroll-cue">SCROLL ↓</div>
+    </section>
 
-      <div class="discipline js-reveal">
-        <span class="discipline-num">03</span>
-        <h3 class="discipline-name">Hareket<br>&amp; Kinematik</h3>
-        <p class="body-copy">
-          Kelimeleri ve görüntüleri bir ritme oturtuyoruz. Kaydırılıp geçilen ekranlarda,
-          insanları durduran ve nabızlarını değiştiren sinematik deneyimler.
-          Akıcı, dikey ve tamamen sokağın enerjisine ait.
-        </p>
+    <!-- ══ 02 · BRIDGE CINEMATIC ══════ -->
+    <section class="panel panel-bridge">
+      <div class="panel-bg parallax-bg" data-parallax="0.35">
+        <img src="assets/bridge.jpg" alt="İstanbul köprüsü" />
       </div>
-
-      <div class="discipline js-reveal">
-        <span class="discipline-num">04</span>
-        <h3 class="discipline-name">Kültürel<br>Bağ</h3>
-        <p class="body-copy">
-          Sahte yüzlere ve satın alınmış gülücüklere inanmıyoruz. Markanızı, kültürü gerçekten
-          var eden insanlarla ve ikonlarla organik olarak birleştiriyoruz.
-        </p>
+      <!-- Neon brand overlay -->
+      <div class="neon-overlay">
+        <span class="neon-label">CREATIVE</span>
+        <span class="neon-label neon-label--lg">AGENCY</span>
+        <span class="neon-label">ISTANBUL</span>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ══════════ FULL-BLEED IMAGE — Stairs ══════════ -->
-  <figure class="fullbleed">
-    <img src="assets/stairs.jpg" alt="Merdivenler gece" loading="lazy" />
-  </figure>
-
-  <!-- ══════════ ZERO-G CASES ══════════ -->
-  <section id="cases" class="section-cases">
-    <h2 class="display-lg cases-title js-reveal">VAKALAR</h2>
-
-    <!-- Case 01 -->
-    <article class="case js-reveal">
-      <div class="case-header">
-        <span class="case-num">01</span>
-        <h3 class="case-name">The<br>Silent<br>Shift</h3>
+    <!-- ══ 03 · THE CORE ══════════════════════════ -->
+    <section id="core" class="panel panel-core">
+      <div class="panel-content core-content">
+        <div class="core-heading js-reveal">
+          <h2 class="display-section">THE<br>CORE</h2>
+        </div>
+        <div class="core-text js-reveal" style="--delay:.3s">
+          <p class="body-lead">
+            Dünyayı değiştirebileceğine inanan markalar, güvenli sularda yüzmez.
+            Biz kurallara uymak için değil, <em>kendi evrenimizi yaratmak</em> için buradayız.
+          </p>
+          <p class="body-copy">
+            Uluslararası vizyonu, sokağın ritmiyle birleştiriyoruz. Bir markanın
+            <em>Ikigai</em>'sini — gerçek varoluş amacını — buluyor ve onu <em>Kaizen</em>
+            felsefesiyle, her detayında kusursuzluğu arayarak yeniden inşa ediyoruz.
+            Bizim için tasarım sadece bir şeyin nasıl göründüğü değildir;
+            <em>nasıl hissettirdiğidir.</em>
+          </p>
+        </div>
       </div>
-      <div class="case-image">
-        <img src="assets/metro.jpg" alt="İstanbul metrosu gece" loading="lazy" />
+    </section>
+
+    <!-- ══ 04 · ARSENAL ══════════════════════════ -->
+    <section id="arsenal" class="panel panel-arsenal">
+      <div class="panel-content arsenal-content">
+        <h2 class="display-section arsenal-heading js-reveal">THE<br>ARSENAL</h2>
+        <div class="disciplines">
+          <div class="discipline js-reveal" style="--delay:0s">
+            <span class="d-num">01</span>
+            <h3 class="d-name">Kimlik</h3>
+            <p class="body-copy">Sadece bir logo çizmiyoruz. Markanızın ruhunu ete kemiğe büründürüyoruz. Zamansız, net ve bakanın bir daha asla unutamayacağı kadar yalın bir karakter mimarisi.</p>
+          </div>
+          <div class="discipline js-reveal" style="--delay:.15s">
+            <span class="d-num">02</span>
+            <h3 class="d-name">Ses</h3>
+            <p class="body-copy">Pazarın o sağır edici gürültüsü içinde bağırmıyoruz. Fısıldıyoruz. Çünkü doğru frekansta bir fısıltı, en büyük gürültüleri bile bastırır.</p>
+          </div>
+          <div class="discipline js-reveal" style="--delay:.3s">
+            <span class="d-num">03</span>
+            <h3 class="d-name">Hareket</h3>
+            <p class="body-copy">Kelimeleri ve görüntüleri bir ritme oturtuyoruz. Kaydırılıp geçilen ekranlarda, insanları durduran ve nabızlarını değiştiren sinematik deneyimler.</p>
+          </div>
+          <div class="discipline js-reveal" style="--delay:.45s">
+            <span class="d-num">04</span>
+            <h3 class="d-name">Bağ</h3>
+            <p class="body-copy">Sahte yüzlere ve satın alınmış gülücüklere inanmıyoruz. Markanızı, kültürü gerçekten var eden insanlarla ve ikonlarla organik olarak birleştiriyoruz.</p>
+          </div>
+        </div>
       </div>
-      <div class="case-body">
+    </section>
+
+    <!-- ══ 05 · STAIRS CINEMATIC ══════════════════ -->
+    <section class="panel panel-stairs">
+      <div class="panel-bg zoom-bg">
+        <img src="assets/stairs.jpg" alt="Merdivenler gece" />
+      </div>
+      <div class="neon-overlay neon-overlay--right">
+        <span class="neon-label neon-label--lg">ZERO</span>
+        <span class="neon-label">GRAVITY</span>
+        <span class="neon-label">CASES ↓</span>
+      </div>
+    </section>
+
+    <!-- ══ 06 · CASE 01 ══════════════════════════ -->
+    <section id="cases" class="panel panel-case">
+      <div class="panel-bg slide-bg slide-bg--right">
+        <img src="assets/metro.jpg" alt="İstanbul metrosu gece" />
+      </div>
+      <div class="case-overlay js-reveal">
+        <span class="case-idx">01</span>
+        <h3 class="case-name">The Silent<br>Shift</h3>
         <p class="body-copy">
           Şehrin kaosu ve egzoz dumanı içinde yeni bir elektrikli scooter.
           Ona <em>"taşıt"</em> demedik. Ona <em>"özgürleşme"</em> dedik.
-          Gece yarısı, karanlığı delen elektrik mavisi ışıklarla şehre mutlak bir sessizlik hediye ettik.
-          Asfaltta süzülme hissini tasarladık.
+          Gece yarısı, karanlığı delen elektrik mavisi ışıklarla şehre
+          mutlak bir sessizlik hediye ettik. Asfaltta süzülme hissini tasarladık.
         </p>
+        <!-- Neon brand badge -->
+        <div class="brand-badge">
+          <span class="brand-tag">URBAN FLOW</span>
+          <span class="brand-tag">ISTANBUL 2025</span>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <!-- Case 02 -->
-    <article class="case case--reverse js-reveal">
-      <div class="case-header">
-        <span class="case-num">02</span>
+    <!-- ══ 07 · CASE 02 ══════════════════════════ -->
+    <section class="panel panel-case">
+      <div class="panel-bg slide-bg slide-bg--left">
+        <img src="assets/concert.jpg" alt="Konser enerjisi" />
+      </div>
+      <div class="case-overlay case-overlay--right js-reveal">
+        <span class="case-idx">02</span>
         <h3 class="case-name">Momen<br>tum</h3>
-      </div>
-      <div class="case-image">
-        <img src="assets/concert.jpg" alt="Konser enerjisi" loading="lazy" />
-      </div>
-      <div class="case-body">
         <p class="body-copy">
           Saniyeler içinde sıkılan bir nesil ve bir spor giyim markası.
-          Durağanlığı reddettik. Sporcunun kaslarındaki o gerilimi, dijital bir ritimle,
-          ekranı parçalayacak bir enerjiyle sunduk.
-          Sadece bir kıyafet satmadık; saf bir adrenalin hissi yarattık.
+          Durağanlığı reddettik. Sporcunun kaslarındaki o gerilimi,
+          dijital bir ritimle, ekranı parçalayacak bir enerjiyle sunduk.
+          Sadece bir kıyafet satmadık; <em>saf bir adrenalin hissi yarattık.</em>
         </p>
+        <div class="brand-badge">
+          <span class="brand-tag">KINETIC SERIES</span>
+          <span class="brand-tag">GEN-Z DROP</span>
+        </div>
       </div>
-    </article>
-  </section>
+    </section>
 
-  <!-- ══════════ FOOTER ══════════ -->
-  <footer class="footer">
-    <p class="display-xl footer-word">ASCEND</p>
-    <p class="footer-copy">© 2026 ANTIGRAVITY ISTANBUL — NO RULES. ONLY EVOLUTION.</p>
-  </footer>
+    <!-- ══ 08 · FOOTER ══════════════════════════ -->
+    <section class="panel panel-footer">
+      <p class="footer-word">ASCEND</p>
+      <p class="footer-copy">© 2026 ANTIGRAVITY ISTANBUL — NO RULES. ONLY EVOLUTION.</p>
+    </section>
+
+  </div><!-- /scroll-container -->
 
   <script src="script.js"></script>
 </body>
