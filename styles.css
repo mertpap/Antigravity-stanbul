@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════
    ANTIGRAVITY ISTANBUL — Cinematic Scroll Edition
-   Mobile-first | Parallax | Neon Glows
+   Mobile-first | Parallax | Glows
 ═══════════════════════════════════════════════ */
 
 /* ── Tokens ─────────────────────────────────── */
@@ -236,16 +236,16 @@ em  { font-style:italic; color:var(--silver); }
   0%,100% { opacity:.3; } 50% { opacity:.9; }
 }
 
-/* ── Neon Overlay (bridge + stairs) ─────────── */
-.neon-overlay {
+/* ── Glow Overlay (bridge + stairs) ─────────── */
+.glow-overlay {
   position:absolute; inset:0; z-index:3;
   display:flex; flex-direction:column;
   justify-content:center; align-items:flex-start;
   padding:0 1.4rem;
   pointer-events:none;
 }
-.neon-overlay--right { align-items:flex-end; text-align:right; }
-.neon-label {
+.glow-overlay--right { align-items:flex-end; text-align:right; }
+.glow-label {
   font-family:var(--f-head);
   font-size:clamp(1rem,4vw,3rem);
   color:var(--blue);
@@ -259,7 +259,7 @@ em  { font-style:italic; color:var(--silver); }
   line-height:1.4;
   opacity:.9;
 }
-.neon-label--lg {
+.glow-label--lg {
   font-size:clamp(3rem,14vw,11rem);
   line-height:.85;
   opacity:.75;
@@ -340,7 +340,7 @@ em  { font-style:italic; color:var(--silver); }
   color:var(--white); margin-bottom:2rem;
 }
 
-/* Brand badge — neon green */
+/* Brand badge */
 .brand-badge {
   display:flex; gap:.75rem; flex-wrap:wrap;
   margin-top:2rem;
@@ -409,7 +409,7 @@ em  { font-style:italic; color:var(--silver); }
   }
   .disciplines     { grid-template-columns:1fr 1fr; gap:3rem 5vw; }
   .case-overlay    { padding:4rem 4rem 6rem; }
-  .neon-overlay    { padding:0 4rem; }
+  .glow-overlay    { padding:0 4rem; }
 }
 
 /* ══════════════════════════════════════════════
@@ -419,7 +419,7 @@ em  { font-style:italic; color:var(--silver); }
   .nav { padding:1.6rem 5rem; }
   .panel-content { padding:8rem 6rem 4rem; }
   .case-overlay  { padding:4rem 6rem 7rem; max-width:600px; }
-  .neon-overlay  { padding:0 6rem; }
+  .glow-overlay  { padding:0 6rem; }
   .core-content  { padding:8rem 6rem; gap:8vw; }
   .disciplines   { grid-template-columns:1fr 1fr; }
   .arsenal-content { padding:8rem 6rem; max-width:1400px; margin:0 auto; }
