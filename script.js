@@ -1,115 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Custom Cursor Logic
-    const cursor = document.querySelector('.custom-cursor');
-    const follower = document.querySelector('.custom-cursor-follower');
-    
-    // Check if device supports hover
-    const isTouchDevice = () => {
-        return (('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
-            (navigator.msMaxTouchPoints > 0));
-    }
+(() => {
+  // ── Custom cursor (desktop only) ─────────────────
+  const cur  = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
 
-    if (!isTouchDevice()) {
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let followerX = mouseX;
-        let followerY = mouseY;
+  if (window.matchMedia('(pointer: fine)').matches && cur && ring) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Immediate update for dot
-            cursor.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
-        });
-
-        // Smooth follow for the ring
-        const followerLoop = () => {
-            followerX += (mouseX - followerX) * 0.12;
-            followerY += (mouseY - followerY) * 0.12;
-            follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
-            requestAnimationFrame(followerLoop);
-        };
-        followerLoop();
-
-        // Hover effects for links and interactive elements
-        const interactables = document.querySelectorAll('a, .case, .service-item, .footer-title');
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                follower.classList.add('hover-active');
-            });
-            el.addEventListener('mouseleave', () => {
-                follower.classList.remove('hover-active');
-            });
-        });
-    }
-
-    // 2. Wrap Nav Text for Hover
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.innerHTML = `<span>${link.textContent}</span>`;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cur.style.left  = mx + 'px';
+      cur.style.top   = my + 'px';
     });
 
-    // 3. Intersection Observer for Reveal Animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const tick = () => {
+      rx = lerp(rx, mx, .12);
+      ry = lerp(ry, my, .12);
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(tick);
     };
+    tick();
 
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            } else {
-                // Optional: remove visible class if you want elements to hide again when out of view
-                // We keep it so they reappear for zero gravity feeling
-                entry.target.classList.remove('visible');
-            }
-        });
-    }, observerOptions);
+    document.querySelectorAll('a, .case, .discipline, .fullbleed')
+      .forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
+      });
+  }
 
-    // Initial trigger for load elements
-    document.querySelectorAll('.reveal-text, .massive-text, .sub-massive-text, .floating-element').forEach(el => {
-        revealObserver.observe(el);
+  // ── Scroll reveal ─────────────────────────────────
+  const reveals = document.querySelectorAll('.js-reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
     });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    // 4. "Zero Gravity" Parallax Scrolling
-    const floatElements = document.querySelectorAll('.floating-element');
-    
-    // Parallax loop
-    const floatScrollLoop = () => {
-        const scrolled = window.scrollY;
-        
-        floatElements.forEach(el => {
-            const speed = parseFloat(el.getAttribute('data-speed')) || 1;
-            
-            // Limit floating calculations to elements currently in the DOM context realistically
-            const rect = el.getBoundingClientRect();
-            const elCenter = rect.top + rect.height / 2;
-            const windowCenter = window.innerHeight / 2;
-            const distanceFromCenter = elCenter - windowCenter;
-            
-            // The "Zero gravity" effect -> gentle floating offset
-            const maxFloat = 100; // max px to float
-            const floatOffset = (distanceFromCenter * (1 - speed) * 0.3);
-            
-            // Apply slight rotation based on float amount for more "formless" feel
-            const rotationOffset = (distanceFromCenter / window.innerHeight) * (1 - speed) * 2;
+  reveals.forEach(el => observer.observe(el));
 
-            if (el.classList.contains('visible')) {
-                // We add the offset onto the original translation
-                el.style.transform = `translate3d(0, ${floatOffset}px, 0) rotate(${rotationOffset}deg)`;
-            } else {
-                el.style.transform = `translate3d(0, 60px, 0)`; 
-            }
-        });
-        
-        requestAnimationFrame(floatScrollLoop);
-    };
-    
-    // Only run parallax on non-touch devices for performance, or run everywhere if performant
-    if (!isTouchDevice()) {
-        floatScrollLoop();
-    }
-});
+  // ── Wrap nav link text for hover slide effect ─────
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const t = a.textContent;
+    a.innerHTML = `<span>${t}</span>`;
+    a.dataset.hover = t;
+  });
+
+})();
